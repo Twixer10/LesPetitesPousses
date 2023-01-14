@@ -1,29 +1,34 @@
-<p align="center"><img src="logoDiiage.png" height="150" 
-alt="logoDiiage.png" /></p>
+<p align="center"><img src="logoDiiage.png" height="150" alt="Logo Diiage" 
+/></p>
 
-<h1 align="center">Les Petites Pousses</h1>
+<h1 align="center">Les petites pousses</h1>
 
 <p align="center"><img src="MainPage.png" alt="Main page" /></p>
 <hr>
 
-## Sumuary
-This project was carried out as part of our training within the DIIAGE, 
-Diploma in Computer Engineering Applied to Business Management.
-For this project we had a client who expressed her need to create a 
-solution allowing to record audio as well as comments. But also a project 
-and meeting creation management and a project sharing system.
-We have implemented an authentication system with an email <> password 
-couple.
+## Résumé du projet
+Le but de ce projet est de créer une application mobile pour une 
+association qui aime les plantes.  
+Nous devons mettre en place une application mobile qui met en place 3 
+grands axes, une place de marché, ou l'on peut vendre ou acheter des 
+produits, une galerie, ou l'on peut poster des photos et un forum, ou l'on 
+peut poster des articles, ou y répondre.  
+  
+  
+Nous n'avons pas pu implémenter toutes les fonctionnalités à 100 %, mais 
+nous avons déjà pu mettre en place le system d'authentification, et nous 
+avons fini à 66 % la place du marché.
 
-## Technologies
+## Les technologies
 
-For this project we were imposed 2 technologies, for the front VueJS 3 and 
-for the back, for the API, ASP.Net
+Pour ce  projet, on  nous a imposé 2 technologies, pour le front  Maui  et 
+pour le  back,  ASP.Net
 
-As for the front, we have added several frameworks, notably Vuetify or 
-Bootstrap.
 
-## Project duration
+## Durée du projet
 
-To carry out this project, we had 3 weeks, we were in a team of 5 
-fullStack developers and a one systems and networks developers
+Pour mener à bien ce projet, nous avions 3 semaines, nous étions dans une 
+équipe de 5 développeurs  fullStack  et un développeur systèmes et 
+réseaux.  
+Ajouté à cela que nous sommes tous en alternances, et que le lors du 
+projet nous avons eu une coupure de 2 semaines.
