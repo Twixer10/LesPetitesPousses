@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage 
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    x:Class="LPPMaUI.Views.Chats.ChatsPage"
+    NavigationPage.HasNavigationBar="false"
+    IconImageSource="messager.png"
+    Title="Messages"
+    xmlns:converter="clr-namespace:LPPMaUI.Commons.Converters"
+    x:Name="TheChatsPage">
+
+    <ContentPage.Resources>
+        <converter:BoolToFontConverter x:Key="BoolToFontConverter"/>
+    </ContentPage.Resources>
+
+    <StackLayout
+        Margin="0, 20, 0, 20">
+
+        <ListView 
+            ItemsSource="{Binding Chats}"
+            SeparatorVisibility="None"
+            HasUnevenRows="True"
+            SelectionMode="None">
+
+            <ListView.ItemTemplate>
+
+                <DataTemplate>
+                
+                    <ViewCell>
+    
+                        <Border
+                        Padding="0"
+                        Stroke="Transparent"
+                        HeightRequest="80">
+
+                            <Grid
+                            VerticalOptions="Center"
+                            RowDefinitions="*,*"
+                            ColumnDefinitions="*,3*">
+                                
+                                <Grid.GestureRecognizers>
+                                    <TapGestureRecognizer NumberOfTapsRequired="1" Command="{Binding Source={x:Reference TheChatsPage}, Path=BindingContext.OnChatClickedCommand}" CommandParameter="{Binding .}"></TapGestureRecognizer>
+                                </Grid.GestureRecognizers>
+                                
+                                <Border
+                                Grid.RowSpan="3" 
+                                Stroke="{x:DynamicResource Secondary}"
+                                HeightRequest="60"
+                                WidthRequest="60"
+                                StrokeShape="RoundRectangle 50">
+
+                                    <Image
+                                    Source="{Binding ProductImage}"
+                                    VerticalOptions="Center"
+                                    HeightRequest="70" 
+                                    WidthRequest="70" />
+
+                                </Border>
+
+                                <Label 
+                                Grid.Column="1" 
+                                Text="{Binding ReceiverName}" 
+                                FontAttributes="Bold"
+                                FontFamily="Gravity-Bold"
+                                FontSize="20"/>
+
+                                <Label 
+                                Grid.Row="1"
+                                Grid.Column="1" 
+                                Text="{Binding LastMessage}"
+                                FontFamily="{Binding IsRead, Converter={StaticResource BoolToFontConverter}}"
+                                FontSize="16"
+                                VerticalOptions="Start"/>
+
+                            </Grid>
+
+                        </Border>
+
+                    </ViewCell>
+
+                </DataTemplate>
+
+            </ListView.ItemTemplate>
+
+        </ListView>
+
+    </StackLayout>
+
+</ContentPage>

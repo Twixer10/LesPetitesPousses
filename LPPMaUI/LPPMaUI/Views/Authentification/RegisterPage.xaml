@@ -1,0 +1,160 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="LPPMaUI.Views.Authentification.RegisterPage"
+             NavigationPage.HasNavigationBar="False"
+             NavigationPage.BackButtonTitle="">
+    <Grid>
+        <Image
+            Aspect="AspectFill"
+            HorizontalOptions="FillAndExpand"
+            Source="wpregister.png"
+            VerticalOptions="FillAndExpand" />
+
+        <Grid
+            RowDefinitions="3.2*, *, *, *, *, *, *, *, 1.8*">
+
+            <Label 
+                FontFamily="Gravity-Bold"
+                VerticalOptions="Center"
+                Text="INSCRIPTION" 
+                FontSize="30" 
+                FontAttributes="Bold" 
+                HorizontalTextAlignment="Center" />
+
+            <Border
+                Grid.Row="1"
+                HeightRequest="50"
+                WidthRequest="280"
+                BackgroundColor="{x:DynamicResource Gray100}"
+                StrokeShape="RoundRectangle 20, 20, 20, 20">
+
+                <Entry
+                    PlaceholderColor="{x:DynamicResource Gray400}"
+                    Placeholder="Prénom" 
+                    Text="{Binding Firstname}" />
+            </Border>
+
+            <Border
+                Grid.Row="2"
+                HeightRequest="50"
+                WidthRequest="280"
+                BackgroundColor="{x:DynamicResource Gray100}"
+                StrokeShape="RoundRectangle 20, 20, 20, 20">
+
+                <Entry 
+                    PlaceholderColor="{x:DynamicResource Gray400}"
+                    Placeholder="Nom de Famille" 
+                    Text="{Binding Lastname}" />
+
+            </Border>
+
+            <Border
+                Grid.Row="3"
+                HeightRequest="50"
+                WidthRequest="280"
+                BackgroundColor="{x:DynamicResource Gray100}"
+                StrokeShape="RoundRectangle 20, 20, 20, 20">
+
+                <Entry 
+                    PlaceholderColor="{x:DynamicResource Gray400}"
+                    Placeholder="Pseudo" 
+                    Text="{Binding Pseudo}" />
+
+            </Border>
+
+            <Border
+                Grid.Row="4"
+                HeightRequest="50"
+                WidthRequest="280"
+                BackgroundColor="{x:DynamicResource Gray100}"
+                StrokeShape="RoundRectangle 20, 20, 20, 20">
+
+                <Entry 
+                    PlaceholderColor="{x:DynamicResource Gray400}"
+                    Placeholder="Email" 
+                    Text="{Binding Email}" />
+
+            </Border>
+
+            <Border
+                Grid.Row="5"
+                HeightRequest="50"
+                WidthRequest="280"
+                BackgroundColor="{x:DynamicResource Gray100}"
+                StrokeShape="RoundRectangle 20, 20, 20, 20">
+
+                <Entry 
+                    PlaceholderColor="{x:DynamicResource Gray400}"
+                    Placeholder="Mot de passe" 
+                    IsPassword="True" 
+                    Text="{Binding Password}" />
+
+            </Border>
+
+            <Border
+                Grid.Row="6"
+                HeightRequest="50"
+                WidthRequest="280"
+                BackgroundColor="{x:DynamicResource Gray100}"
+                StrokeShape="RoundRectangle 20, 20, 20, 20">
+
+                <Entry 
+                    PlaceholderColor="{x:DynamicResource Gray400}"
+                    Placeholder="Confirmer le mot de passe" 
+                    IsPassword="True" 
+                    Text="{Binding ConfirmPassword}" />
+
+            </Border>
+
+            <Label 
+                Grid.Row="7"
+                HorizontalOptions="Center"
+                Text="{Binding Message}" 
+                TextColor="Red">
+            </Label>
+
+            <Grid
+                VerticalOptions="Start"
+                Grid.Row="8"
+                ColumnDefinitions="1.5*, *">
+
+                <Grid
+                    VerticalOptions="Start"
+                    RowDefinitions="*, *">
+
+                    <Border
+                        HeightRequest="50"
+                        WidthRequest="200"
+                        BackgroundColor="{x:DynamicResource Tertiary}"
+                        Stroke="{x:DynamicResource Secondary}"
+                        StrokeThickness="4"
+                        StrokeShape="RoundRectangle 20, 20, 20, 20">
+
+                        <Button 
+                            Text="S'INSCRIRE"
+                            FontAttributes="Bold"
+                            FontFamily="Gravity-Bold"
+                            TextColor="{x:DynamicResource Quaternary}"
+                            Command="{Binding OnRegisterClickedCommand}"/>
+                    </Border>
+
+                    <Button 
+                        Grid.Row="1"
+                        Text="Se connecter"
+                        TextColor="{x:DynamicResource Quaternary}"
+                        Command="{Binding OnLoginClickedCommand}"
+                        BackgroundColor="Transparent" />
+                </Grid>
+                
+                <Image
+                    Grid.Column="1"
+                    Source="plantregister.png"
+                    HeightRequest="100"
+                    WidthRequest="100"/>
+
+            </Grid>
+        </Grid>
+    </Grid>
+</ContentPage>

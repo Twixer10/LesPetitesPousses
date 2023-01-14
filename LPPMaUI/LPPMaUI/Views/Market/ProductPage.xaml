@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="LPPMaUI.Views.Market.ProductPage"
+             Title="{Binding CurrentProduct.Name}">
+
+    <StackLayout
+        Margin="30"
+        Spacing="20">
+
+        <Border 
+            StrokeShape="RoundRectangle 10">
+            <Image 
+                Source="https://d1nhio0ox7pgb.cloudfront.net/_img/o_collection_png/green_dark_grey/512x512/plain/plant.png"
+                HorizontalOptions="Center"/>
+        </Border>
+
+        <Label Text="Description :"
+                FontAttributes="Bold"
+                FontSize="25"/>
+        <Label 
+            HeightRequest="50"
+            Text="{Binding CurrentProduct.Description}"/>
+
+        <Grid
+            ColumnDefinitions="*, *"
+            RowDefinitions="*, *">
+
+            <Label 
+                Text="Vendu par:"
+                HorizontalOptions="Center"
+                FontAttributes="Bold"/>
+
+            <Label 
+                Grid.Row="1"
+                HorizontalOptions="Center"
+                Text="{Binding CurrentProduct.Seller.Pseudo}"/>
+
+            <Label 
+                Grid.Column="1"
+                FontAttributes="Bold"
+                HorizontalOptions="Center"
+                Text="Karma: "/>
+            
+            <Border
+                Grid.Column="1"
+                Grid.Row="1"
+                BackgroundColor="#EDF5E1"
+                StrokeShape="RoundRectangle 10"
+                HeightRequest="40"
+                WidthRequest="50"
+                HorizontalOptions="Center">
+
+                <Grid
+                    VerticalOptions="Center"
+                    ColumnDefinitions="*,*"
+                    ColumnSpacing="2">
+
+                    <Label 
+                        HorizontalOptions="End"
+                        Text="{Binding CurrentProduct.Price}"/>
+
+                    <Image
+                        HorizontalOptions="Start"
+                        Grid.Column="1"
+                        Source="lotus.png"
+                        HeightRequest="20"
+                        WidthRequest="20"/>
+                </Grid>
+
+            </Border>
+        </Grid>
+
+        <!--<Button 
+            HeightRequest="60"
+            Text="Je suis intéressé"
+            FontSize="18"
+            TextColor="Black"
+            BackgroundColor="#BBDD8C"
+            CornerRadius="10"
+            Padding="20, 0"
+            Margin="80, 0"
+            Command="{Binding OnMessageProductInterestClickCommand}"/>-->
+
+
+        <Button 
+            HeightRequest="60"
+            Text="Acheter"
+            FontSize="18"
+            TextColor="Black"
+            BackgroundColor="#BBDD8C"
+            CornerRadius="10"
+            Padding="20, 0"
+            Margin="80, 0"
+            Clicked="OnConfirmAlertClicked"/>
+    </StackLayout>
+</ContentPage>

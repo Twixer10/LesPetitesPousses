@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<TabbedPage  xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="LPPMaUI.Views.CustomTabbedPage"
+             xmlns:home="clr-namespace:LPPMaUI.Views.Home"
+             xmlns:market="clr-namespace:LPPMaUI.Views.Market"
+             xmlns:gallery="clr-namespace:LPPMaUI.Views.Gallery"
+             xmlns:android="clr-namespace:Microsoft.Maui.Controls.PlatformConfiguration.AndroidSpecific;assembly=Microsoft.Maui.Controls"
+             android:TabbedPage.ToolbarPlacement="Bottom"
+             BarBackground="{x:DynamicResource Tertiary}"
+             UnselectedTabColor="{x:DynamicResource Gray400}"
+             SelectedTabColor="{x:DynamicResource Black}">
+
+    <TabbedPage.Children>
+    </TabbedPage.Children>
+    
+</TabbedPage>

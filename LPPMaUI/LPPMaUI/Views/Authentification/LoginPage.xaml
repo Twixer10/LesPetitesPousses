@@ -1,0 +1,131 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="LPPMaUI.Views.Authentification.LoginPage"
+             NavigationPage.HasNavigationBar="False"
+             NavigationPage.BackButtonTitle="">
+
+
+    <Grid>
+        <Image
+            Aspect="AspectFill"
+            HorizontalOptions="FillAndExpand"
+            Source="wplogin.png"
+            VerticalOptions="FillAndExpand" />
+
+        <Grid
+            RowDefinitions="1.3*, *, *, *, 0.5*, 0.5*, 4*">
+
+            <Label 
+                FontFamily="Gravity-Bold"
+                VerticalOptions="End"
+                Text="PETITE" 
+                FontSize="30" 
+                FontAttributes="Bold" 
+                HorizontalTextAlignment="Center" />
+
+            <Label 
+                FontFamily="Gravity-Bold"
+                Grid.Row="1"
+                Text="POUSSE" 
+                FontSize="30" 
+                FontAttributes="Bold" 
+                HorizontalTextAlignment="Center" />
+
+            <ActivityIndicator
+                IsRunning="{Binding IsLoading}" 
+                Color="{x:DynamicResource Secondary}" />
+
+            <Border
+                Grid.Row="2"
+                HeightRequest="50"
+                WidthRequest="280"
+                BackgroundColor="{x:DynamicResource Gray100}"
+                StrokeShape="RoundRectangle 20, 20, 20, 20">
+
+                <Entry
+                    PlaceholderColor="{x:DynamicResource Gray400}"
+                    Placeholder="Pseudo ou Email" 
+                    Text="{Binding Login}" />
+            </Border>
+
+            <Border
+                Grid.Row="3"
+                HeightRequest="50"
+                WidthRequest="280"
+                BackgroundColor="{x:DynamicResource Gray100}"
+                StrokeShape="RoundRectangle 20, 20, 20, 20">
+
+                <Entry 
+                    PlaceholderColor="{x:DynamicResource Gray400}"
+                    Placeholder="Mot de passe" 
+                    IsPassword="True" 
+                    Text="{Binding Password}" />
+
+            </Border>
+
+            <Label 
+                HorizontalOptions="Center"
+                Grid.Row="4" 
+                Text="{Binding Message}" 
+                TextColor="Red">
+            </Label>
+
+            <Border
+                Grid.Row="5"
+                HeightRequest="50"
+                WidthRequest="200"
+                BackgroundColor="{x:DynamicResource Tertiary}"
+                Stroke="{x:DynamicResource Secondary}"
+                StrokeThickness="4"
+                StrokeShape="RoundRectangle 20, 20, 20, 20">
+
+                <Button 
+                    Text="SE CONNECTER"
+                    FontAttributes="Bold"
+                    FontFamily="Gravity-Bold"
+                    TextColor="{x:DynamicResource Quaternary}"
+                    Command="{Binding OnLoginClickedCommand}"
+                    IsVisible="{Binding !IsLoading}"/>
+
+            </Border>
+
+            <Grid
+                Grid.Row="6"
+                ColumnDefinitions="1.5*, *">
+
+                <Image
+                    VerticalOptions="Start"
+                    HorizontalOptions="End"
+                    Margin="0, 40, 0, 0"
+                    Source="plantlogin.png"
+                    HeightRequest="250"
+                    WidthRequest="150"/>
+
+                <Border
+                    Grid.Column="1"
+                    HeightRequest="100"
+                    WidthRequest="100"
+                    BackgroundColor="{x:DynamicResource Tertiary}"
+                    Stroke="{x:DynamicResource Quinary}"
+                    StrokeThickness="3"
+                    StrokeShape="RoundRectangle 20, 20, 20, 20">
+
+                    <Button 
+                        LineBreakMode="WordWrap"
+                        Text="Nouveau compte"
+                        FontFamily="Gravity-Bold"
+                        TextColor="{x:DynamicResource Quinary}"
+                        Command="{Binding OnRegisterClickedCommand}"
+                        BackgroundColor="Transparent"
+                        IsVisible="{Binding !IsLoading}"/>
+
+                </Border>
+
+            </Grid>
+
+
+        </Grid>
+    </Grid>
+</ContentPage>

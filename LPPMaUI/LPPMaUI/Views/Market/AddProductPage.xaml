@@ -1,0 +1,138 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="LPPMaUI.Views.Market.AddProductPage"
+             Title="Ajouter un produit">
+
+    <Grid
+        RowDefinitions="4.5*, *, *, 3*, *, 0.5*, *, *">
+
+        <Border
+            HeightRequest="220"
+            WidthRequest="220"
+            Stroke="{x:DynamicResource Gray500}"
+            StrokeShape="RoundRectangle 50">
+
+            <Image 
+                WidthRequest="200" 
+                HeightRequest="200"
+                x:Name="Picture" 
+                Source="{Binding Picture}" />
+        </Border>
+
+        <Border
+            Grid.Row="1"
+            HeightRequest="50"
+            WidthRequest="280"
+            BackgroundColor="{x:DynamicResource Gray100}"
+            StrokeShape="RoundRectangle 20, 20, 20, 20">
+
+            <Button
+                Grid.Row="3"
+                HeightRequest="50"
+                WidthRequest="280"
+                Text="Ajouter une photo (optionnel)" 
+                Command="{Binding OnAddPictureButtonClickedCommand}" 
+                TextColor="{x:DynamicResource Gray400}">
+            </Button>
+
+        </Border>
+
+        <Border
+                Grid.Row="2"
+                HeightRequest="50"
+                WidthRequest="280"
+                BackgroundColor="{x:DynamicResource Gray100}"
+                StrokeShape="RoundRectangle 20, 20, 20, 20">
+
+            <Entry
+                    PlaceholderColor="{x:DynamicResource Gray400}"
+                    Placeholder="Nom du produit" 
+                    Text="{Binding NewName}" />
+        </Border>
+
+        <Border
+                Grid.Row="3"
+                HeightRequest="150"
+                WidthRequest="280"
+                BackgroundColor="{x:DynamicResource Gray100}"
+                StrokeShape="RoundRectangle 20, 20, 20, 20">
+
+            <Entry
+                    PlaceholderColor="{x:DynamicResource Gray400}"
+                    Placeholder="Description du produit" 
+                    Text="{Binding NewDescription}" />
+        </Border>
+
+        <Border
+                Grid.Row="4"
+                HeightRequest="50"
+                WidthRequest="280"
+                BackgroundColor="{x:DynamicResource Gray100}"
+                StrokeShape="RoundRectangle 20, 20, 20, 20">
+
+            <Grid
+                ColumnDefinitions="*, *">
+                <Entry
+                    PlaceholderColor="{x:DynamicResource Gray400}"
+                    Placeholder="Prix du produit" 
+                    Text="{Binding NewPrice}" />
+
+                <Image
+                Margin="0, 0, 10, 0"
+                HorizontalOptions="End"
+                Grid.Column="1"
+                Source="lotus.png"
+                HeightRequest="30"
+                WidthRequest="30"/>
+            </Grid>
+
+        </Border>
+
+        <Label 
+            Grid.Row="5"
+            Text="{Binding Message}" 
+            TextColor="Red" 
+            HorizontalOptions="Center" />
+
+        <Border
+            VerticalOptions="End"
+            Grid.Row="6"
+            HeightRequest="50"
+            WidthRequest="200"
+            BackgroundColor="{x:DynamicResource Tertiary}"
+            Stroke="{x:DynamicResource Secondary}"
+            StrokeThickness="4"
+            StrokeShape="RoundRectangle 20, 20, 20, 20">
+
+            <Button 
+                    Text="VENDRE"
+                    FontAttributes="Bold"
+                    FontFamily="Gravity-Bold"
+                    TextColor="{x:DynamicResource Quaternary}"
+                    Command="{Binding OnAddButtonClickedCommand}"/>
+
+        </Border>
+        
+        <Grid
+            Margin="0, 0, 0, 80"
+            Grid.Row="7"
+            ColumnDefinitions="*, *">
+
+            <Image
+                HorizontalOptions="Start"
+                Source="plantaddproduitun.png"
+                HeightRequest="100"
+                WidthRequest="100"/>
+            
+            <Image
+                Grid.Column="1"
+                HorizontalOptions="End"
+                Source="plantaddproduitdeux.png"
+                HeightRequest="100"
+                WidthRequest="100"/>
+        </Grid>
+
+    </Grid>
+    
+</ContentPage>

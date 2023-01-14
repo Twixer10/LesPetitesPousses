@@ -1,0 +1,148 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="LPPMaUI.Views.Market.MarketPage"
+             NavigationPage.HasNavigationBar="false"
+             xmlns:mvvm="clr-namespace:Prism.Mvvm;assembly=Prism.Maui"
+             mvvm:ViewModelLocator.AutowireViewModel="Automatic"
+             IconImageSource="panier.png"
+             Title="Marché"
+             x:Name="TheMarketPage">
+    
+    <StackLayout 
+        Margin="20"
+        Spacing="10">
+
+        <Grid
+            HorizontalOptions="Fill"
+            VerticalOptions="Start"
+            ColumnDefinitions="4*,*">
+
+            <!--SearchBar-->
+            <Border
+            FlexLayout.AlignSelf="Center"
+            HorizontalOptions="Fill"
+            HeightRequest="50"
+            Stroke="{x:DynamicResource Gray500}"
+            StrokeShape="RoundRectangle 100">
+
+                <SearchBar Placeholder="Rechercher"
+                           x:Name="searchBarMarket"/>
+
+            </Border>
+
+            <!--Add-->
+            <Border
+                FlexLayout.AlignSelf="Start"
+                HorizontalOptions="Center"
+                HeightRequest="50"
+                WidthRequest="50"
+                Stroke="{x:DynamicResource Gray500}"
+                StrokeShape="RoundRectangle 100"
+                Grid.Column="1">
+
+                <ImageButton 
+                    WidthRequest="30"
+                    HeightRequest="30"
+                    Source="ajouter.png"
+                    HorizontalOptions="Center"
+                    Command="{Binding OnAddButtonClickedCommand}"/>
+            </Border>
+
+        </Grid>
+
+        <!--ProductList-->
+        <ListView 
+            ItemsSource="{Binding Products}"
+            SeparatorVisibility="None"
+            HasUnevenRows="True"
+            SelectionMode="None">
+
+            <ListView.ItemTemplate>
+
+                <DataTemplate>
+
+                    <ViewCell>
+
+                        <Border
+                            Padding="0"
+                            Background="{x:DynamicResource Primary}"
+                            Stroke="{x:DynamicResource Primary}"
+                            HorizontalOptions="Fill"
+                            VerticalOptions="End"
+                            Margin="5"
+                            HeightRequest="80"
+                            StrokeShape="RoundRectangle 15">
+
+                            <Grid
+                                VerticalOptions="Center"
+                                RowDefinitions="*,*,*"
+                                ColumnDefinitions="*,2*,*">
+
+                                <Grid.GestureRecognizers>
+                                    <TapGestureRecognizer NumberOfTapsRequired="1" Command="{Binding Source={x:Reference TheMarketPage}, Path=BindingContext.OnProductClickedCommand}" CommandParameter="{Binding .}"></TapGestureRecognizer>
+                                </Grid.GestureRecognizers>
+
+                                <Image 
+                                   Grid.RowSpan="3" 
+                                   Source="https://d1nhio0ox7pgb.cloudfront.net/_img/o_collection_png/green_dark_grey/512x512/plain/plant.png"
+                                   VerticalOptions="Center"
+                                   HeightRequest="60" 
+                                   WidthRequest="60" />
+
+                                <Label 
+                                    Grid.Column="1" 
+                                    Text="{Binding Name}" 
+                                    FontAttributes="Bold" />
+
+
+                                <Grid
+                                    Grid.Row="1"
+                                    Grid.Column="1" 
+                                    VerticalOptions="Center"
+                                    ColumnDefinitions="Auto,Auto"
+                                    ColumnSpacing="5">
+
+                                    <Label
+                                    Text="{Binding Price}"/>
+
+                                    <Image 
+                                        Grid.Column="1"
+                                        Source="lotus.png"
+                                        VerticalOptions="Start"
+                                        Margin="0,1,0,0"
+                                        HeightRequest="17" 
+                                        WidthRequest="17" />
+
+                                </Grid>
+
+                                <Label 
+                                    Grid.Row="2"
+                                    Grid.Column="1" 
+                                    Text="{Binding Description}"
+                                    FontAttributes="Italic" 
+                                    VerticalOptions="End" />
+
+                                <Image 
+                                    Grid.Column="2"
+                                   Grid.RowSpan="2" 
+                                   Source="suivant.png"
+                                   VerticalOptions="End"
+                                   HeightRequest="20" 
+                                   WidthRequest="20" />
+
+                            </Grid>
+
+                        </Border>
+
+                    </ViewCell>
+
+                </DataTemplate>
+
+            </ListView.ItemTemplate>
+
+        </ListView>
+
+    </StackLayout>
+
+</ContentPage>

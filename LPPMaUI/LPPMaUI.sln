@@ -1,0 +1,26 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.4.33122.133
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "LPPMaUI", "LPPMaUI\LPPMaUI.csproj", "{2DDA3787-F3EC-400D-8E51-C78E41194E6F}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{2DDA3787-F3EC-400D-8E51-C78E41194E6F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2DDA3787-F3EC-400D-8E51-C78E41194E6F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2DDA3787-F3EC-400D-8E51-C78E41194E6F}.Debug|Any CPU.Deploy.0 = Debug|Any CPU
+		{2DDA3787-F3EC-400D-8E51-C78E41194E6F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2DDA3787-F3EC-400D-8E51-C78E41194E6F}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {361F3936-0C50-4B94-89E7-AA648415F153}
+	EndGlobalSection
+EndGlobal

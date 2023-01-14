@@ -1,0 +1,196 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="LPPMaUI.Views.Home.HomePage"
+             xmlns:mvvm="clr-namespace:Prism.Mvvm;assembly=Prism.Maui"
+             mvvm:ViewModelLocator.AutowireViewModel="Automatic"
+             NavigationPage.HasNavigationBar="false"
+             IconImageSource="domicile.png"
+             Title="Accueil">
+    <Grid>
+        <Image
+            Aspect="AspectFill"
+            HorizontalOptions="FillAndExpand"
+            Source="wpprrofil.png"
+            VerticalOptions="FillAndExpand" />
+
+        <Grid
+            RowDefinitions="*, 1*, 1.5*, 1.5*">
+
+            <Grid
+                RowDefinitions="*, *">
+
+                <Image
+                        HorizontalOptions="End"
+                        Margin="0, 0, 40, 0"
+                        Grid.Column="1"
+                        Source="adjust.png"
+                        HeightRequest="30"
+                        WidthRequest="30"/>
+
+                <Label 
+                        Margin="0, 0, 0, 30"
+                        Text="{Binding CurrentUser.Pseudo}"
+                        TextColor="{x:DynamicResource Black}"
+                        FontSize="30"
+                        FontFamily="Gravity-Bold"
+                        FontAttributes="Bold"
+                        VerticalTextAlignment="Center"
+                        HorizontalTextAlignment="Center" 
+                        Grid.Row="1"/>
+            </Grid>
+
+            <Image
+                Grid.Row="1"
+                HorizontalOptions="Center"
+                Grid.Column="1"
+                Source="profil.png"
+                HeightRequest="150"
+                WidthRequest="150"/>
+
+            <Grid
+                Grid.Row="2"
+                ColumnDefinitions="*, *">
+
+                <Grid
+                    RowDefinitions="*, 2*">
+
+                    <Label 
+                        VerticalOptions="End"
+                        Text="Abonnés"
+                        TextColor="{x:DynamicResource Black}"
+                        FontSize="22"
+                        FontFamily="Gravity-Bold"
+                        FontAttributes="Bold"
+                        VerticalTextAlignment="Center"
+                        HorizontalTextAlignment="Center"/>
+
+                    <Border
+                        VerticalOptions="Start"
+                        Grid.Row="1"
+                        HeightRequest="80"
+                        WidthRequest="80"
+                        BackgroundColor="{x:DynamicResource Tertiary}"
+                        StrokeThickness="0"
+                        StrokeShape="RoundRectangle 30, 30, 30, 30">
+
+                        <Label 
+                            Text="82"
+                            TextColor="{x:DynamicResource Black}"
+                            FontSize="20"
+                            FontFamily="Gravity-Bold"
+                            FontAttributes="Bold"
+                            VerticalTextAlignment="Center"
+                            HorizontalTextAlignment="Center"/>
+
+                    </Border>
+
+                </Grid>
+                <Grid
+                    Grid.Column="1"
+                    RowDefinitions="*, 2*">
+
+                    <Label 
+                        VerticalOptions="End"
+                        Text="Abonnements"
+                        TextColor="{x:DynamicResource Black}"
+                        FontSize="22"
+                        FontFamily="Gravity-Bold"
+                        FontAttributes="Bold"
+                        VerticalTextAlignment="Center"
+                        HorizontalTextAlignment="Center"/>
+
+                    <Border
+                        VerticalOptions="Start"
+                        Grid.Row="1"
+                        HeightRequest="80"
+                        WidthRequest="80"
+                        BackgroundColor="{x:DynamicResource Tertiary}"
+                        StrokeThickness="0"
+                        StrokeShape="RoundRectangle 30, 30, 30, 30">
+
+                        <Label 
+                            Text="458"
+                            TextColor="{x:DynamicResource Black}"
+                            FontSize="22"
+                            FontFamily="Gravity-Bold"
+                            FontAttributes="Bold"
+                            VerticalTextAlignment="Center"
+                            HorizontalTextAlignment="Center"/>
+
+                    </Border>
+                </Grid>
+            </Grid>
+
+            <Grid
+                Grid.Row="3"
+                ColumnDefinitions="*, *">
+
+                <Grid
+                    ColumnDefinitions="*, *, *">
+
+                    <Image
+                        HorizontalOptions="Start"
+                        VerticalOptions="End"
+                        Source="plantprofilun.png"
+                        HeightRequest="210"
+                        WidthRequest="100"/>
+
+                    <Image
+                        Grid.Column="1"
+                        VerticalOptions="End"
+                        Source="plantprofildeux.png"
+                        HeightRequest="160"
+                        WidthRequest="100"/>
+
+                    <Image
+                        Grid.Column="2"
+                        VerticalOptions="End"
+                        Source="plantprofiltrois.png"
+                        HeightRequest="110"
+                        WidthRequest="100"/>
+
+                </Grid>
+                
+                <Grid
+                    Grid.Column="1"
+                    RowDefinitions="*, 2*">
+                    
+                    <Label 
+                        VerticalOptions="End"
+                        Text="Karmas"
+                        TextColor="{x:DynamicResource Black}"
+                        FontSize="22"
+                        FontFamily="Gravity-Bold"
+                        FontAttributes="Bold"
+                        VerticalTextAlignment="Center"
+                        HorizontalTextAlignment="Center"/>
+
+                    <Border
+                        VerticalOptions="Start"
+                        Grid.Row="1"
+                        HeightRequest="80"
+                        WidthRequest="80"
+                        BackgroundColor="{x:DynamicResource Primary}"
+                        StrokeThickness="0"
+                        StrokeShape="RoundRectangle 30, 30, 30, 30">
+
+                        <Label 
+                            Text="{Binding CurrentUser.Karma, StringFormat='{0}'}" 
+                            TextColor="{x:DynamicResource Black}"
+                            FontSize="22"
+                            FontFamily="Gravity-Bold"
+                            FontAttributes="Bold"
+                            VerticalTextAlignment="Center"
+                            HorizontalTextAlignment="Center"/>
+
+                    </Border>
+                </Grid>
+            </Grid>
+
+        </Grid>
+        
+    </Grid>
+
+</ContentPage>

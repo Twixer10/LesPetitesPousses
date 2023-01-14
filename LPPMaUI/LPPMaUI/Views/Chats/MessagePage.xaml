@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage 
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    x:Class="LPPMaUI.Views.Chats.MessagePage"
+    Title="{Binding CurrentProduct.Seller.Pseudo}">
+
+    <StackLayout>
+
+            <Grid ColumnDefinitions="2*,*">
+            
+                        <Border
+                            Margin="70, 10, 5, 10"
+                            HorizontalOptions="Fill"
+                            HeightRequest="60"
+                            Stroke="{x:DynamicResource Secondary}"
+                            StrokeShape="RoundRectangle 50">
+            
+                            <Label 
+                            Text="{Binding CurrentProduct.Name}"
+                            TextColor="{x:DynamicResource Black}"
+                            FontSize="18"
+                            FontFamily="Gravity-Bold"
+                            FontAttributes="Bold"
+                            VerticalTextAlignment="Center"
+                            HorizontalTextAlignment="Center"/>
+            
+                        </Border>
+            
+                        <Border
+                            Margin="5, 10, 70, 10"
+                            Stroke="{x:DynamicResource Secondary}"
+                            HeightRequest="60"
+                            WidthRequest="60"
+                            StrokeShape="RoundRectangle 50"
+                            Grid.Column="1">
+            
+                            <Image
+                                Source="{Binding CurrentChat.ProductImage}"
+                                VerticalOptions="Center"
+                                HeightRequest="70" 
+                                WidthRequest="70" />
+            
+                        </Border>
+
+                    </Grid>
+                    
+                        <Border
+                            BackgroundColor="#D0D0D0"
+                            Margin="10"
+                            HorizontalOptions="End"
+                            WidthRequest="300"
+                            StrokeShape="RoundRectangle 20">
+                            <Label
+                                Text="Je suis intéressé par votre produit. Est-il toujours disponible ?"
+                                Padding="10"
+                                FontSize="14"
+                                HorizontalTextAlignment="End"
+                                />
+                            
+                        </Border>            
+        
+    </StackLayout>
+
+</ContentPage>
