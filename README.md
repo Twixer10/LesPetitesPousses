@@ -36,7 +36,7 @@ projet nous avons eu une coupure de 2 semaines.
 ## Membre de l'équipe:
 ### Développeurs FullStack
 <ul>
-  <li>TECHER Thomas <thomas.techer@diiage.org></li>
-  <li>MAILLARD Émilie <emilie.maillard@diiage.org></li>
-  <li>MARTHE-ROSE Loïs <lois.marthe-rose@diiage.org></li>
+  <li><a href="mailto:thomas.techer@diiage.org">TECHER Thomas<a/></li>
+  <li><a href="mailto:emilie.maillard@diiage.org">MAILLARD Émilie<a/></li>
+  <li><a href="mailto:lois.marthe-rose@diiage.org">MARTHE-ROSE Loïs<a/></li>
 </ul>  
