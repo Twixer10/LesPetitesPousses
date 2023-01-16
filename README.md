@@ -32,3 +32,11 @@ Pour mener à bien ce projet, nous avions 3 semaines, nous étions dans une
 réseaux.  
 Ajouté à cela que nous sommes tous en alternances, et que le lors du 
 projet nous avons eu une coupure de 2 semaines.
+
+## Membre de l'équipe:
+### Développeurs FullStack
+<ul>
+  <li>TECHER Thomas <thomas.techer@diiage.org></li>
+  <li>MAILLARD Émilie <emilie.maillard@diiage.org></li>
+  <li>MARTHE-ROSE Loïs <lois.marthe-rose@diiage.org></li>
+</ul>  
